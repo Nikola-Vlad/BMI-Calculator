@@ -8,19 +8,103 @@ body {
 
 .calculator {
     background-color: #a51c30;
-    width:25%;
-    height: 300px;
+    width:20%;
+    height: 400px;
+    position: relative;
 }
 
 .calculator h2 {
     color: white;
     padding: 30px 10px 20px 10px;
     text-align:center;
-    font-size: 27px;
+    font-size: 25px;
 }
 
 .flex-units {
     display: flex;
     justify-content: center;
-    gap:30px;
+    gap: 10px;
+    margin: -20px 20px 30px 20px;
 }
+
+.us-units-btn,
+.metric-units-btn {
+    border: 1px solid black;
+    height: 45px;
+    width: 150px;
+    background-color: white;
+    text-align: center;
+    padding-top: 12px;
+    color:rgba(52, 52, 52, 0.97);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.flex-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.height-wrapper span,
+.weight-wrapper span {
+    position: relative;
+    right: 45px;
+    font-size: 14px;
+    color:#333;
+}
+
+.height, .weight {
+    padding: 0px 0px 0px 36px;
+    color: white;
+    font-size: 15px;
+    margin-bottom: -10px;
+    font-weight: 500;
+}
+
+#height-input-field,
+#weight-input-field {
+    border: 1px solid black;
+    width: 81%;
+    margin-left: 36px;
+    height: 40px;
+    color: #333;
+    padding: 14px 5px 14px 5px;
+}
+
+.flex-buttons {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    bottom: 70px;
+    left: 35px;
+}
+
+#calculateBtn {
+    width: 200px;
+    padding: 16px;
+    cursor: pointer;
+    background: #ffd700;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+#calculateBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#resetBtn {
+    width: 98px;
+    border: 1px solid transparent;
+    font-weight: 500;
+    background-color: #eee;
+}
+
+#resetBtn:hover {
+    background-color: #ddd;
+}
+

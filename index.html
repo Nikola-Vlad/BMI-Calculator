@@ -22,23 +22,31 @@
             <h2>Calculate Your BMI</h2>
 
             <div class="flex-units">
-                <label class="us-Units-Btn">US Units</label>
-                <label class="metric-Units-Btn">Metric Units</label>
+                <label class="us-units-btn">US Units</label>
+                <label class="metric-units-btn">Metric Units</label>
             </div>
 
             <div class="flex-metrics">
-                <label>Height</label>
-                <input id="height-input-field" type="number">
-                <label>Weight</label>
-                <input id="weight-input-field" type="number">
+                <div class="height-wrapper">
+                    <label class="height" for="height-input-field">Height</label>
+                    <input id="height-input-field" type="number">
+                    <span>cm</span>
+                </div>
+
+                <div class="weight-wrapper">
+                    <label class="weight" for="weight-input-field">Weight</label>
+                    <input id="weight-input-field" type="number">
+                    <span>kg</span>
+                </div>
             </div>
 
-            <button id="calculateBtn">Calculate</button>
+        </div>
+        <div class="flex-buttons">
+            <button id="calculateBtn">Calculate BMI</button>
             <button id="resetBtn">Reset</button>
         </div>
+
     </main>
-
-
 
 </body>
 
