@@ -28,22 +28,50 @@
 
             <div class="flex-metrics">
                 <div class="height-wrapper">
-                    <label class="height" for="height-input-field">Height</label>
-                    <input id="height-input-field" type="number">
-                    <span>cm</span>
+                    <label class="height">Height</label>
+
+                    <div class="metric-height">
+                        <input id="height-input-field" type="number">
+                        <span>cm</span>
+                    </div>
+
+                    <div class="us-height">
+                        <div class="height-field">
+                            <input id="feet-input-field" type="number">
+                            <span>ft</span>
+                        </div>
+
+                        <div class="height-field">
+                            <input id="inches-input-field" type="number">
+                            <span>in</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="weight-wrapper">
-                    <label class="weight" for="weight-input-field">Weight</label>
-                    <input id="weight-input-field" type="number">
-                    <span>kg</span>
+                    <label class="weight">Weight</label>
+
+                    <div class="metric-weight">
+                        <input id="weight-input-field" type="number">
+                        <span>kg</span>
+                    </div>
+
+                    <div class="us-weight">
+                        <input id="lbs-input-field" type="number">
+                        <span>lbs</span>
+                    </div>
                 </div>
             </div>
 
-        </div>
-        <div class="flex-buttons">
-            <button id="calculateBtn">Calculate BMI</button>
-            <button id="resetBtn">Reset</button>
+            <div class="flex-buttons">
+                <button id="calculateBtn">Calculate BMI</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+
+            <div class="bmi-result">
+                <h3>33.4</h3>
+                <span>OBESE</span>
+            </div>
         </div>
 
     </main>
