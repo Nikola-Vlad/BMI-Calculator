@@ -10,10 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <main>
+    <main class="bmi-calculator">
         <h1>BMI Calculator</h1>
         <p>BMI (Body Mass Index) is a simple measurement that uses your height and weight to estimate whether your
             weight falls within a healthy range.</p>
@@ -21,56 +23,55 @@
         <div class="calculator">
             <h2>Calculate Your BMI</h2>
 
-            <div class="flex-units">
-                <label class="us-units-btn">US Units</label>
-                <label class="metric-units-btn">Metric Units</label>
+            <div class="unit-preferences">
+                <button class="imperial-units-btn">Imperial</button>
+                <button class="metric-units-btn">Metric</button>
             </div>
 
-            <div class="flex-metrics">
-                <div class="height-wrapper">
-                    <label class="height">Height</label>
+            <div class="input-group">
+                <label class="height-label">Height</label>
 
-                    <div class="metric-height">
-                        <input id="height-input-field" type="number">
-                        <span>cm</span>
+                <div class="imperial-height-flex-container">
+                    <div class="imperial-height-field">
+                        <input class="feet-input-bar" type="number">
+                        <span>ft</span>
                     </div>
 
-                    <div class="us-height">
-                        <div class="height-field">
-                            <input id="feet-input-field" type="number">
-                            <span>ft</span>
-                        </div>
-
-                        <div class="height-field">
-                            <input id="inches-input-field" type="number">
-                            <span>in</span>
-                        </div>
+                    <div class="imperial-height-field">
+                        <input class="inches-input-bar" type="number">
+                        <span>in</span>
                     </div>
                 </div>
 
-                <div class="weight-wrapper">
-                    <label class="weight">Weight</label>
-
-                    <div class="metric-weight">
-                        <input id="weight-input-field" type="number">
-                        <span>kg</span>
-                    </div>
-
-                    <div class="us-weight">
-                        <input id="lbs-input-field" type="number">
-                        <span>lbs</span>
-                    </div>
+                <div class="metric-height-field">
+                    <input class="cm-input-bar" type="number">
+                    <span>cm</span>
                 </div>
             </div>
 
-            <div class="flex-buttons">
-                <button id="calculateBtn">Calculate BMI</button>
-                <button id="resetBtn">Reset</button>
+            <div class="input-group">
+                <label class="weight-label">Weight</label>
+
+                <div class="imperial-weight-field">
+                    <input class="lbs-input-bar" type="number">
+                    <span>lbs</span>
+                </div>
+
+                <div class="metric-weight-field">
+                    <input class="kg-input-bar" type="number">
+                    <span>kg</span>
+                </div>
+            </div>
+
+            <div class="action-buttons-row">
+                <button class="calculateBtn">Calculate BMI</button>
+                <button class="resetBtn">Reset</button>
             </div>
 
             <div class="bmi-result">
-                <h3>33.4</h3>
-                <span>OBESE</span>
+                <h3 class="bmi-value">33.4</h3>
+                <label class="bmi-label">Your BMI</label>
+                <div class="bmi-category">OBESE</div>
             </div>
         </div>
 

@@ -1,69 +1,37 @@
-* { 
-    box-sizing: border-box; 
-} 
- 
-body { 
-    font-family: "Overpass", sans-serif; 
-} 
- 
-.calculator { 
-    background-color: #a51c30; 
-    width: 90%; 
-    max-width: 400px; 
-    min-width: 300px; 
-    position: relative; 
-    padding: 0 40px; 
-} 
- 
-.calculator h2 { 
-    color: white; 
-    padding: 30px 10px 20px 10px; 
-    text-align: center; 
-    font-size: 25px; 
-} 
- 
-.flex-units { 
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; 
-    margin: -20px 0 30px 0px; 
-    flex-wrap: wrap; 
-} 
- 
-.us-units-btn, 
-.metric-units-btn { 
-    border: 1px solid black; 
-    height: 45px; 
-    width: 150px; 
-    background-color: white; 
-    text-align: center; 
-    padding-top: 12px; 
-    color: rgba(52, 52, 52, 0.97); 
-    cursor: pointer; 
-    font-weight: 600; 
-} 
- 
-.flex-metrics { 
-    display: flex; 
-    flex-direction: column; 
-    position: relative; 
-} 
- 
-.metric-height span { 
-    /* REMOVE DISPLAY NONE AFTER I'VE FIXED US METRICS */ 
-    display: none; 
-    position: relative; 
-    font-size: 14px; 
-    color: black; 
-    left: 280px; 
-    bottom: 30px; 
-} 
- 
-.height, .weight { 
-    color: white; 
-    font-size: 15px; 
-    font-weight: 500; 
-} 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -71,127 +39,208 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-/* METRIC HEIGHT-WEIGHT INPUT FIELDS */
+body { 
+    font-family: "Overpass", sans-serif; 
+} 
+
+.bmi-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bmi-calculator > h1 {
+    padding-top: 20px;
+}
+
+.bmi-calculator > p {
+    text-align: center;
+    max-width: 300px;
+    font-weight: 500;
+}
  
-#height-input-field, 
-#weight-input-field { 
-    /* REMOVE DISPLAY NONE AFTER I'VE FIXED US METRICS */ 
-    display: none; 
-    border: 1px solid black; 
-    width: 100%; 
-    height: 40px; 
-    color: black; 
-    padding: 14px 5px; 
-    margin-left: 0px; 
+.calculator { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #a51c30; 
+    padding: 24px 32px 32px 32px;
+
+    width: 90%;
+    max-width: 400px;
 } 
-
-
-/* US HEIGHT */
-
-.us-height { 
+ 
+.calculator > h2 { 
+    text-align: center;
+    gap: 20px;
+    color: white; 
+} 
+ 
+.unit-preferences { 
     display: flex; 
-    gap: 10px; 
-} 
-
-.height-field {
-    position: relative;
-    width: 50%;
-}
-
-/* US HEIGHT INPUT FIELD */
-
-.height-field input {
-    border: 1px solid black;
-    height: 40px;
-    width: 100%;
-    color: black;
-    padding: 14px 30px 14px 5px;
-}
-
-.height-field span {
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    font-size: 14px;
-    color: black;
-}
-
-
-/* US WEIGHT */
-
-.us-weight span { 
-    position: relative; 
-    font-size: 14px; 
-    color: black; 
-    left: 294px; 
-    bottom: 30px; 
-} 
-
-#lbs-input-field { 
-    border: 1px solid black; 
-    width: 100%; 
-    height: 40px; 
-    color: black; 
-    padding: 14px 5px; 
-    margin-left: 0px; 
-} 
-
-
-/* METRIC WEIGHT */
-
-.metric-weight span { 
-    /* REMOVE DISPLAY NONE AFTER I'VE FIXED US METRICS */ 
-    display: none; 
-    position: relative; 
-    font-size: 14px; 
-    color: black; 
-    left: 284px; 
-    bottom: 30px; 
-} 
-
-
-/* BUTTONS */
-
-.flex-buttons { 
-    display: flex; 
-    gap: 10px; 
-    position: relative; 
+    justify-content: center; 
+    gap: 12px; 
     flex-wrap: wrap; 
-    padding-bottom: 20px; 
 } 
  
-#calculateBtn { 
-    width: 200px; 
-    padding: 16px; 
+/* US UNITS - METRIC UNITS BUTTONS UNDER H2 */
+.imperial-units-btn, 
+.metric-units-btn { 
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center; 
+    color: black;
     cursor: pointer; 
-    background: #ffd700; 
+    font-weight: 500;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+} 
+
+.active {
+    background-color: white;
+}
+
+/* HEIGHT-WEIGHT WORDS ON TOP OF INPUT FIELDS */
+ 
+.height-label,
+.weight-label { 
+    display: block;
+    color: white;
+    font-size: 14px; 
+    font-weight: 500; 
+    margin-bottom: 8px;
+} 
+
+/* IMPERIAL HEIGHT-WEIGHT INPUT BARS DEFAULT SHOWN*/
+
+.imperial-height-flex-container { 
+    display: flex; 
+    gap: 10px;
+} 
+
+.feet-input-bar,
+.inches-input-bar,
+.lbs-input-bar {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 4px solid transparent;
+}
+
+.feet-input-bar:focus,
+.inches-input-bar:focus,
+.lbs-input-bar:focus {
+    outline: none;
+    border: 4px solid #ffd700;
+}
+
+/* IMPERIAL FEET-INCHES-LBS SPAN ELEMENT POSITIONS */
+
+.imperial-height-field,
+.imperial-weight-field {
+    position: relative;
+}
+
+.imperial-height-field span,
+.imperial-weight-field span {
+    position: absolute;
+    font-size: 14px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+}
+
+
+/* METRIC HEIGHT-WEIGHT INPUT BARS DEFAULT HIDDEN */
+
+.metric-height-field,
+.metric-weight-field {
+    display: none;
+}
+
+.cm-input-bar,
+.kg-input-bar {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 4px solid transparent;
+}
+
+.cm-input-bar:focus,
+.kg-input-bar:focus {
+    outline: none;
+    border: 4px solid #ffd700;
+}
+
+/* METRIC CM-KG SPAN ELEMENT POSITIONS */
+
+.metric-height-field,
+.metric-weight-field {
+    position: relative;
+}
+
+.metric-height-field span,
+.metric-weight-field span {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #555;
+    pointer-events: none;
+}
+
+/* CALCULATE BMI - RESET BUTTONS */
+
+.action-buttons-row { 
+    display: flex; 
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 8px;
+    flex-wrap: wrap; 
+} 
+ 
+.calculateBtn { 
+    flex: 1;
+    padding: 16px;
     font-size: 16px; 
+    background: #ffd700; 
     font-weight: 600; 
+    cursor: pointer; 
+    
     border: 1px solid transparent; 
     transition: 0.2s ease; 
 } 
  
-#calculateBtn:hover { 
+.calculateBtn:hover { 
+    background: #ffed4a;
     transform: translateY(-3px); 
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4); 
 } 
  
-#resetBtn { 
-    width: 98px; 
-    border: 1px solid transparent; 
-    font-weight: 700; 
-    background-color: #eee; 
-} 
- 
-#resetBtn:hover { 
-    background-color: #ddd; 
+.resetBtn {
+    padding: 16px 24px;
+}
+
+.resetBtn:hover { 
+    background-color: #ddd;
 } 
  
 .bmi-result { 
-    display: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 20px;
+    background: white;
 } 
  
-/* .us-height,  
-.us-weight { 
-    display: none; 
-} */
+.bmi-value {
+    font-size: 40px;
+}
