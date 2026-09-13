@@ -32,6 +32,11 @@ A simple BMI Calculator built with HTML, CSS and JavaScript.
 3. Click **Calculate BMI**.
 4. Your BMI and BMI category will be displayed.
 
+## Design Inspiration
+
+Inspired by the Harvard Health BMI Calculator.
+The layout and visual design were recreated as a learning exercise, with all HTML, CSS, and JavaScript functionality implemented independently.
+
 ## Author
 
 Nikola-Vlad
