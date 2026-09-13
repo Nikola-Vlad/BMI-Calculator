@@ -37,6 +37,8 @@ A simple BMI Calculator built with HTML, CSS and JavaScript.
 Inspired by the Harvard Health BMI Calculator.
 The layout and visual design were recreated as a learning exercise, with all HTML, CSS, and JavaScript functionality implemented independently.
 
+## Live Demo -> View the live project https://nikola-vlad.github.io/BMI-Calculator/
+
 ## Author
 
 Nikola-Vlad
