@@ -31,6 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 button {
     text-decoration: none;
     border: none;
+    color: #000;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -159,10 +162,7 @@ body {
     pointer-events: none;
 }
 
-
 /* METRIC HEIGHT-WEIGHT INPUT BARS DEFAULT HIDDEN */
-
-
 
 .cm-input-bar,
 .kg-input-bar {
