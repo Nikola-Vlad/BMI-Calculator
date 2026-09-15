@@ -251,6 +251,10 @@ body {
 
 /* CSS Classes for JS Functionality and toggling */
 
+.error-message {
+    color:red;
+}
+
 .hidden {
     display: none;
 }
